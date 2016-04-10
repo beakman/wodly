@@ -8,7 +8,18 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
+from rest_framework import routers
+
+from wodly.users import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+
 urlpatterns = [
+    # Django REST Framework
+    url(r'^api/v1/', include(router.urls)),
+    url(r'^api/', include('rest_framework.urls', namespace='rest_framework')),
+
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
 
