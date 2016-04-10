@@ -18,7 +18,7 @@ def update_site_forward(apps, schema_editor):
         id=settings.SITE_ID,
         defaults={
             "domain": "wodly.com",
-            "name": "project_name"
+            "name": "Wodly"
         }
     )
 

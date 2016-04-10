@@ -1,4 +1,4 @@
-project_name
+Wodly
 ==============================
 
 Keep track of your WODs

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# project_name documentation build configuration file, created by
+# Wodly documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'project_name'
+project = u'Wodly'
 copyright = u"2016, Paco"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -186,7 +186,7 @@ latex_elements = {
 latex_documents = [
     ('index',
      'wodly.tex',
-     u'project_name Documentation',
+     u'Wodly Documentation',
      u"Paco", 'manual'),
 ]
 
@@ -216,7 +216,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'wodly', u'project_name Documentation',
+    ('index', 'wodly', u'Wodly Documentation',
      [u"Paco"], 1)
 ]
 
@@ -230,8 +230,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'wodly', u'project_name Documentation',
-     u"Paco", 'project_name',
+    ('index', 'wodly', u'Wodly Documentation',
+     u"Paco", 'Wodly',
      'Keep track of your WODs', 'Miscellaneous'),
 ]
 
