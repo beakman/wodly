@@ -9,9 +9,9 @@
   <div class="row">
     <div class="col-sm-12">
 
-      <h2>{{ object.username }}</h2>
+      <h2><a href="javascript:void(0)">@{{ object.username }}</a></h2>
       {% if object.name %}
-        <p>{{ object.name }}</p>
+        <p>{{ object.name }} {{ object.surname }}</p>
       {% endif %}
     </div>
   </div>
