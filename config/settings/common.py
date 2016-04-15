@@ -44,7 +44,9 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'wodly.users',  # custom users app
+    'wodly.users',
+    'wodly.wod',
+    'wodly.box',  # custom users app
     # Your stuff: custom apps go here
 )
 
