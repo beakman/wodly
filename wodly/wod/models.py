@@ -18,10 +18,11 @@ class Wod(TimeStampedModel):
 	def get_absolute_url(self):
 		return reverse('wod:detail', kwargs={'id': self.id})
 
-class Exercise():
+class Exercise(TimeStampedModel):
 	wod = models.ForeignKey(Wod)
 	title = models.CharField(max_length=200)
 	description = models.CharField(max_length=500)
+	duration = models.TimeField()
 
 	def __str__(self):
 		return self.title
