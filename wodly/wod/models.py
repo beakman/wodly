@@ -10,7 +10,7 @@ from wodly.users.models import User
 
 class Wod(TimeStampedModel):
 	title = models.CharField(max_length=200)
-	user = models.ForeignKey(settings.AUTH_USER_MODEL)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='wods')
 
 	def __str__(self):
 		return self.title
