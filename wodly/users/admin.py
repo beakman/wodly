@@ -7,6 +7,7 @@ from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 
 from .models import User
+from wodly.wod.models import Wod
 
 class MyUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
@@ -30,8 +31,17 @@ class MyUserCreationForm(UserCreationForm):
             return username
         raise forms.ValidationError(self.error_messages['duplicate_username'])
 
+class WodInline(admin.StackedInline):
+    model = Wod
+    extra = 0
 
 @admin.register(User)
 class UserAdmin(AuthUserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
+    inlines = [WodInline, ]
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "wod":
+            kwargs["queryset"] = Wod.objects.filter(user=request.user)
+        return super(UserAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
