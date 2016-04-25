@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Add new WOD{% endblock %}
+
+{% block content %}
+    <script type="text/html" id="item-template">
+        <div id="item-exercise">
+            {% crispy formset.empty_form %}
+        </div>
+    </script>
+    <h1>New {{ request.user.username }}'s WOD</h1>
+    <form class="form-horizontal" method="post" action="{% url 'wods:new' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <legend>Exercises</legend>
+          <div class="exercises">
+            <div class="items-form-container" id="exercise-{{ forloop.counter0 }}">
+                {% crispy formset.empty_form %}
+            </div>
+         </div>
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn">Accept</button>
+          </div>
+        </div>
+
+        <a href="#" id="add-item-button" class="btn btn-info add-item">Add Item</a>
+        
+    </form>
+{% endblock %}

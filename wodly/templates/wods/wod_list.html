@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+{% block title %}Wod list{% endblock %}
+
+{% block content %}
+
+{% if current_user != query_user %}
+    
+<h2>WODs públicos de @{{ query_user.username }}</h2>
+
+{% else %}
+
+<h2>Mis WODs</h2>
+
+{% endif %}
+
+<div class="">
+    {% for wod in wod_list %}
+      <a href="{% url 'wods:detail' wod.user wod.pk %}">
+        <h4 class="list-group-item-heading">{{ wod.title }}</h4>
+      </a>
+    	<small>por <a href="{% url 'users:detail' wod.user %}">@{{ wod.user }}</a></small>
+    {% endfor %}
+</div>
+
+{% endblock content %}

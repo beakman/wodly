@@ -39,13 +39,15 @@ THIRD_PARTY_APPS = (
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.twitter',
     'rest_framework', # Django REST Framework
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'wodly.users',
-    'wodly.wod',
+    'wodly.wods',
     'wodly.box',  # custom users app
     # Your stuff: custom apps go here
 )

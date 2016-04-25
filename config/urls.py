@@ -30,8 +30,8 @@ urlpatterns = [
     url(r'^users/', include("wodly.users.urls", namespace="users")),
     url(r'^accounts/', include('allauth.urls')),
 
-    # Your stuff: custom urls includes go here
-
+    # Wod management
+    url(r'^wods/', include("wodly.wods.urls", namespace="wods")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

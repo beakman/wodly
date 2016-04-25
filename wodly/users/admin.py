@@ -7,7 +7,7 @@ from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 
 from .models import User
-from wodly.wod.models import Wod
+from wodly.wods.models import Wod
 
 class MyUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):

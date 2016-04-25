@@ -49,7 +49,9 @@ class UserListView(LoginRequiredMixin, ListView):
     slug_field = "username"
     slug_url_kwarg = "username"
 
+
 class UserViewSet(viewsets.ModelViewSet):
+
     """
     API endpoint that allows users to be viewed or edited.
     """
