@@ -19,18 +19,20 @@ Basic Commands
 Setting Up Databases
 ^^^^^^^^^^^^^^^^^^^^
 
-Ubuntu 16.04:
-sudo apt install python-dev postgresql-server-dev-all postgresql postgresql-contrib
+Ubuntu 16.04::
 
-PostgreSQL setup:
+    $ sudo apt install python-dev postgresql-server-dev-all postgresql postgresql-contrib
 
-psql -U postgres
-CREATE ROLE user1 WITH LOGIN ENCRYPTED PASSWORD 'password1234' CREATEDB;
-CREATE DATABASE database1;
-GRANT ALL PRIVILEGES ON DATABASE database1 TO user1;
+PostgreSQL setup::
 
-Set environment variable inside project:
-export DATABASE_URL="postgres://user1:password12345@127.0.0.1:5432/database1"
+    psql -U postgres
+    CREATE ROLE user1 WITH LOGIN ENCRYPTED PASSWORD 'password1234' CREATEDB;
+    CREATE DATABASE database1;
+    GRANT ALL PRIVILEGES ON DATABASE database1 TO user1;
+
+Set environment variable inside project::
+
+    export DATABASE_URL="postgres://user1:password12345@127.0.0.1:5432/database1"
 
 Setting Up Your Users
 ^^^^^^^^^^^^^^^^^^^^^
